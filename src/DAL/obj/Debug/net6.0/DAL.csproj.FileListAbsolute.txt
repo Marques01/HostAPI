@@ -1,0 +1,85 @@
+D:\Repositório\Pet.API\src\DAL\bin\Debug\net6.0\DAL.deps.json
+D:\Repositório\Pet.API\src\DAL\bin\Debug\net6.0\DAL.runtimeconfig.json
+D:\Repositório\Pet.API\src\DAL\bin\Debug\net6.0\DAL.dll
+D:\Repositório\Pet.API\src\DAL\bin\Debug\net6.0\DAL.pdb
+D:\Repositório\Pet.API\src\DAL\bin\Debug\net6.0\BLL.dll
+D:\Repositório\Pet.API\src\DAL\bin\Debug\net6.0\BLL.pdb
+D:\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+D:\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+D:\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+D:\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+D:\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+D:\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.dll
+D:\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\refint\DAL.dll
+D:\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.pdb
+D:\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.genruntimeconfig.cache
+D:\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\ref\DAL.dll
+C:\Users\cleit\Documents\Repositório\Pet.API\src\DAL\bin\Debug\net6.0\DAL.deps.json
+C:\Users\cleit\Documents\Repositório\Pet.API\src\DAL\bin\Debug\net6.0\DAL.runtimeconfig.json
+C:\Users\cleit\Documents\Repositório\Pet.API\src\DAL\bin\Debug\net6.0\DAL.dll
+C:\Users\cleit\Documents\Repositório\Pet.API\src\DAL\bin\Debug\net6.0\DAL.pdb
+C:\Users\cleit\Documents\Repositório\Pet.API\src\DAL\bin\Debug\net6.0\BLL.dll
+C:\Users\cleit\Documents\Repositório\Pet.API\src\DAL\bin\Debug\net6.0\BLL.pdb
+C:\Users\cleit\Documents\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+C:\Users\cleit\Documents\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cleit\Documents\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+C:\Users\cleit\Documents\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+C:\Users\cleit\Documents\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\cleit\Documents\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+C:\Users\cleit\Documents\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.dll
+C:\Users\cleit\Documents\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\refint\DAL.dll
+C:\Users\cleit\Documents\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.pdb
+C:\Users\cleit\Documents\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\DAL.genruntimeconfig.cache
+C:\Users\cleit\Documents\Repositório\Pet.API\src\DAL\obj\Debug\net6.0\ref\DAL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\DAL\bin\Debug\net6.0\DAL.deps.json
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\DAL\bin\Debug\net6.0\DAL.runtimeconfig.json
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\DAL\bin\Debug\net6.0\DAL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\DAL\bin\Debug\net6.0\DAL.pdb
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\DAL\bin\Debug\net6.0\BLL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\DAL\bin\Debug\net6.0\BLL.pdb
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\DAL\obj\Debug\net6.0\DAL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\DAL\obj\Debug\net6.0\refint\DAL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\DAL\obj\Debug\net6.0\DAL.pdb
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\DAL\obj\Debug\net6.0\DAL.genruntimeconfig.cache
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\DAL\obj\Debug\net6.0\ref\DAL.dll
+C:\Users\cleiton.marques\Documents\api.pet\src\DAL\bin\Debug\net6.0\DAL.deps.json
+C:\Users\cleiton.marques\Documents\api.pet\src\DAL\bin\Debug\net6.0\DAL.runtimeconfig.json
+C:\Users\cleiton.marques\Documents\api.pet\src\DAL\bin\Debug\net6.0\DAL.dll
+C:\Users\cleiton.marques\Documents\api.pet\src\DAL\bin\Debug\net6.0\DAL.pdb
+C:\Users\cleiton.marques\Documents\api.pet\src\DAL\bin\Debug\net6.0\BLL.dll
+C:\Users\cleiton.marques\Documents\api.pet\src\DAL\bin\Debug\net6.0\BLL.pdb
+C:\Users\cleiton.marques\Documents\api.pet\src\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+C:\Users\cleiton.marques\Documents\api.pet\src\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cleiton.marques\Documents\api.pet\src\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+C:\Users\cleiton.marques\Documents\api.pet\src\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+C:\Users\cleiton.marques\Documents\api.pet\src\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\cleiton.marques\Documents\api.pet\src\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+C:\Users\cleiton.marques\Documents\api.pet\src\DAL\obj\Debug\net6.0\DAL.dll
+C:\Users\cleiton.marques\Documents\api.pet\src\DAL\obj\Debug\net6.0\refint\DAL.dll
+C:\Users\cleiton.marques\Documents\api.pet\src\DAL\obj\Debug\net6.0\DAL.pdb
+C:\Users\cleiton.marques\Documents\api.pet\src\DAL\obj\Debug\net6.0\DAL.genruntimeconfig.cache
+C:\Users\cleiton.marques\Documents\api.pet\src\DAL\obj\Debug\net6.0\ref\DAL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\DAL\bin\Debug\net6.0\DAL.deps.json
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\DAL\bin\Debug\net6.0\DAL.runtimeconfig.json
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\DAL\bin\Debug\net6.0\DAL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\DAL\bin\Debug\net6.0\DAL.pdb
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\DAL\bin\Debug\net6.0\BLL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\DAL\bin\Debug\net6.0\BLL.pdb
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\DAL\obj\Debug\net6.0\DAL.csproj.AssemblyReference.cache
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\DAL\obj\Debug\net6.0\DAL.csproj.CopyComplete
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\DAL\obj\Debug\net6.0\DAL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\DAL\obj\Debug\net6.0\refint\DAL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\DAL\obj\Debug\net6.0\DAL.pdb
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\DAL\obj\Debug\net6.0\DAL.genruntimeconfig.cache
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\DAL\obj\Debug\net6.0\ref\DAL.dll

@@ -1,0 +1,60 @@
+D:\Repositório\Pet.API\src\BLL\bin\Debug\net6.0\BLL.deps.json
+D:\Repositório\Pet.API\src\BLL\bin\Debug\net6.0\BLL.dll
+D:\Repositório\Pet.API\src\BLL\bin\Debug\net6.0\BLL.pdb
+D:\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+D:\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+D:\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+D:\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+D:\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\BLL.dll
+D:\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\refint\BLL.dll
+D:\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\BLL.pdb
+D:\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\ref\BLL.dll
+C:\Users\cleit\Documents\Repositório\Pet.API\src\BLL\bin\Debug\net6.0\BLL.deps.json
+C:\Users\cleit\Documents\Repositório\Pet.API\src\BLL\bin\Debug\net6.0\BLL.dll
+C:\Users\cleit\Documents\Repositório\Pet.API\src\BLL\bin\Debug\net6.0\BLL.pdb
+C:\Users\cleit\Documents\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+C:\Users\cleit\Documents\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cleit\Documents\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+C:\Users\cleit\Documents\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+C:\Users\cleit\Documents\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\cleit\Documents\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\BLL.dll
+C:\Users\cleit\Documents\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\refint\BLL.dll
+C:\Users\cleit\Documents\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\BLL.pdb
+C:\Users\cleit\Documents\Repositório\Pet.API\src\BLL\obj\Debug\net6.0\ref\BLL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\BLL\bin\Debug\net6.0\BLL.deps.json
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\BLL\bin\Debug\net6.0\BLL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\BLL\bin\Debug\net6.0\BLL.pdb
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\BLL\obj\Debug\net6.0\BLL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\BLL\obj\Debug\net6.0\refint\BLL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\BLL\obj\Debug\net6.0\BLL.pdb
+C:\Users\cleit\OneDrive\Área de Trabalho\api.pet\src\BLL\obj\Debug\net6.0\ref\BLL.dll
+C:\Users\cleiton.marques\Documents\api.pet\src\BLL\bin\Debug\net6.0\BLL.deps.json
+C:\Users\cleiton.marques\Documents\api.pet\src\BLL\bin\Debug\net6.0\BLL.dll
+C:\Users\cleiton.marques\Documents\api.pet\src\BLL\bin\Debug\net6.0\BLL.pdb
+C:\Users\cleiton.marques\Documents\api.pet\src\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+C:\Users\cleiton.marques\Documents\api.pet\src\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cleiton.marques\Documents\api.pet\src\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+C:\Users\cleiton.marques\Documents\api.pet\src\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+C:\Users\cleiton.marques\Documents\api.pet\src\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\cleiton.marques\Documents\api.pet\src\BLL\obj\Debug\net6.0\BLL.dll
+C:\Users\cleiton.marques\Documents\api.pet\src\BLL\obj\Debug\net6.0\refint\BLL.dll
+C:\Users\cleiton.marques\Documents\api.pet\src\BLL\obj\Debug\net6.0\BLL.pdb
+C:\Users\cleiton.marques\Documents\api.pet\src\BLL\obj\Debug\net6.0\ref\BLL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\BLL\bin\Debug\net6.0\BLL.deps.json
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\BLL\bin\Debug\net6.0\BLL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\BLL\bin\Debug\net6.0\BLL.pdb
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\BLL\obj\Debug\net6.0\BLL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\BLL\obj\Debug\net6.0\refint\BLL.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\BLL\obj\Debug\net6.0\BLL.pdb
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\BLL\obj\Debug\net6.0\ref\BLL.dll
