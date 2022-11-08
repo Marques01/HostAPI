@@ -16,6 +16,8 @@ namespace DAL.Repository
             CategoryProductRepository = new CategoryProductRepository(_context);
 
             CategoryRepository = new CategoryRepository(_context);
+
+            HostRepository = new HostRepository(_context);
         }
 
         public ICategoryRepository CategoryRepository { get; }
@@ -23,6 +25,8 @@ namespace DAL.Repository
         public IProductRepository ProductRepository { get; }
 
         public ICategoryProductRepository CategoryProductRepository { get; }
+
+        public IHostRepository HostRepository { get; }
 
         public async Task CommitAsync()
         {

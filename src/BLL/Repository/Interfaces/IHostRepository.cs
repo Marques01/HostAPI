@@ -8,7 +8,7 @@ namespace BLL.Repository.Interfaces
 
         Task<Host> GetByNameAsync(string name);
 
-        Task<Host> GetByStatusAsync(bool situation);
+        Task<IEnumerable<Host>> GetByStatusAsync(bool situation);
 
         Task<Host> GetByDoorAsync(int door);
 
@@ -20,6 +20,6 @@ namespace BLL.Repository.Interfaces
 
         Task DeleteHostAsync(Host host);
 
-        Task Update(Host host);
+        Task UpdateAsync(Host host);
     }
 }

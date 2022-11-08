@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAL.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -101,6 +101,24 @@ namespace DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Host", x => x.HostId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "HostLoggin",
+                columns: table => new
+                {
+                    HostId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    HostLogginId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(125)", nullable: false),
+                    Door = table.Column<int>(type: "int", nullable: false),
+                    Enabled = table.Column<bool>(type: "bit", nullable: false),
+                    CreateAt = table.Column<string>(type: "nvarchar(20)", nullable: false),
+                    UpdateAt = table.Column<string>(type: "nvarchar(20)", nullable: false),
+                    RemoveAt = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_HostLoggin", x => x.HostId);
                 });
 
             migrationBuilder.CreateTable(
@@ -229,8 +247,7 @@ namespace DAL.Migrations
                 {
                     GameCapacityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     GameId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CapacityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    HostId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    CapacityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -246,12 +263,6 @@ namespace DAL.Migrations
                         column: x => x.GameId,
                         principalTable: "Games",
                         principalColumn: "GameId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_GameCapacity_Host_HostId",
-                        column: x => x.HostId,
-                        principalTable: "Host",
-                        principalColumn: "HostId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -300,6 +311,31 @@ namespace DAL.Migrations
                         column: x => x.ProductsProductId,
                         principalTable: "Products",
                         principalColumn: "ProductId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "HostCapacity",
+                columns: table => new
+                {
+                    HostCapacityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    HostId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    GameCapacityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_HostCapacity", x => x.HostCapacityId);
+                    table.ForeignKey(
+                        name: "FK_HostCapacity_GameCapacity_GameCapacityId",
+                        column: x => x.GameCapacityId,
+                        principalTable: "GameCapacity",
+                        principalColumn: "GameCapacityId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_HostCapacity_Host_HostId",
+                        column: x => x.HostId,
+                        principalTable: "Host",
+                        principalColumn: "HostId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -363,8 +399,13 @@ namespace DAL.Migrations
                 column: "GameId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_GameCapacity_HostId",
-                table: "GameCapacity",
+                name: "IX_HostCapacity_GameCapacityId",
+                table: "HostCapacity",
+                column: "GameCapacityId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HostCapacity_HostId",
+                table: "HostCapacity",
                 column: "HostId");
         }
 
@@ -392,7 +433,10 @@ namespace DAL.Migrations
                 name: "CategoryProduct");
 
             migrationBuilder.DropTable(
-                name: "GameCapacity");
+                name: "HostCapacity");
+
+            migrationBuilder.DropTable(
+                name: "HostLoggin");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -407,13 +451,16 @@ namespace DAL.Migrations
                 name: "Products");
 
             migrationBuilder.DropTable(
+                name: "GameCapacity");
+
+            migrationBuilder.DropTable(
+                name: "Host");
+
+            migrationBuilder.DropTable(
                 name: "Capacity");
 
             migrationBuilder.DropTable(
                 name: "Games");
-
-            migrationBuilder.DropTable(
-                name: "Host");
         }
     }
 }

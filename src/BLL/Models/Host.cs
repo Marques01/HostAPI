@@ -24,13 +24,13 @@ namespace BLL.Models
 
         public bool Enabled { get => _enabled; set => _enabled = value; }
 
-        public ICollection<GameCapacity> GamesCapacities { get; set; }
+        public ICollection<HostCapacity> HostCapacities { get; set; }
 
         public Host()
         {
             _hostId = Guid.NewGuid();
 
-            GamesCapacities = new Collection<GameCapacity>();
+            HostCapacities = new Collection<HostCapacity>();
         }
     }
 }

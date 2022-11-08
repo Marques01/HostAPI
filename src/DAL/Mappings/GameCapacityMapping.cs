@@ -19,10 +19,6 @@ namespace DAL.Mappings
             builder.HasOne(x => x.Game)
                 .WithMany(x => x.GamesCapacities)
                 .HasForeignKey(x => x.GameId);
-
-            builder.HasOne(x => x.Host)
-                .WithMany(x => x.GamesCapacities)
-                .HasForeignKey(x => x.HostId);
         }
     }
 }

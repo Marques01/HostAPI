@@ -8,6 +8,8 @@
 
         public ICategoryProductRepository CategoryProductRepository { get; }
 
+        public IHostRepository HostRepository { get; }
+
         Task CommitAsync();
 
         Task DisposeAsync();

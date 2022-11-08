@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221103231955_Initial")]
-    partial class Initial
+    [Migration("20221108020919_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -180,16 +180,11 @@ namespace DAL.Migrations
                     b.Property<Guid>("GameId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("HostId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("GameCapacityId");
 
                     b.HasIndex("CapacityId");
 
                     b.HasIndex("GameId");
-
-                    b.HasIndex("HostId");
 
                     b.ToTable("GameCapacity", (string)null);
                 });
@@ -213,6 +208,63 @@ namespace DAL.Migrations
                     b.HasKey("HostId");
 
                     b.ToTable("Host", (string)null);
+                });
+
+            modelBuilder.Entity("BLL.Models.HostCapacity", b =>
+                {
+                    b.Property<Guid>("HostCapacityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("GameCapacityId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("HostId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("HostCapacityId");
+
+                    b.HasIndex("GameCapacityId");
+
+                    b.HasIndex("HostId");
+
+                    b.ToTable("HostCapacity", (string)null);
+                });
+
+            modelBuilder.Entity("BLL.Models.HostLoggin", b =>
+                {
+                    b.Property<Guid>("HostId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CreateAt")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int>("Door")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Enabled")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("HostLogginId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(125)");
+
+                    b.Property<string>("RemoveAt")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UpdateAt")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("HostId");
+
+                    b.ToTable("HostLoggin", (string)null);
                 });
 
             modelBuilder.Entity("BLL.Models.Product", b =>
@@ -421,15 +473,26 @@ namespace DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Capacity");
+
+                    b.Navigation("Game");
+                });
+
+            modelBuilder.Entity("BLL.Models.HostCapacity", b =>
+                {
+                    b.HasOne("BLL.Models.GameCapacity", "GameCapacity")
+                        .WithMany("HostCapacities")
+                        .HasForeignKey("GameCapacityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("BLL.Models.Host", "Host")
-                        .WithMany("GamesCapacities")
+                        .WithMany("HostCapacities")
                         .HasForeignKey("HostId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Capacity");
-
-                    b.Navigation("Game");
+                    b.Navigation("GameCapacity");
 
                     b.Navigation("Host");
                 });
@@ -515,9 +578,14 @@ namespace DAL.Migrations
                     b.Navigation("GamesCapacities");
                 });
 
+            modelBuilder.Entity("BLL.Models.GameCapacity", b =>
+                {
+                    b.Navigation("HostCapacities");
+                });
+
             modelBuilder.Entity("BLL.Models.Host", b =>
                 {
-                    b.Navigation("GamesCapacities");
+                    b.Navigation("HostCapacities");
                 });
 
             modelBuilder.Entity("BLL.Models.Product", b =>

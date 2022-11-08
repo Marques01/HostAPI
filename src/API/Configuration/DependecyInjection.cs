@@ -10,6 +10,7 @@ namespace API.Configuration
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ICategoryProductRepository, CategoryProductRepository>();
+            services.AddScoped<IHostRepository, HostRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }

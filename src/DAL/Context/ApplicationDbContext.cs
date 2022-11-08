@@ -23,6 +23,8 @@ namespace DAL.Context
 
         public DbSet<HostLoggin> HostLoggins { get; set; }
 
+        public DbSet<HostCapacity> HostCapacities { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
         {
@@ -41,6 +43,8 @@ namespace DAL.Context
             Capacities = Set<Capacity>();
 
             HostLoggins = Set<HostLoggin>();
+
+            HostCapacities = Set<HostCapacity>();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
