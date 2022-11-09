@@ -13,7 +13,8 @@ namespace BLL.Models
             _updateAt = string.Empty;
 
         private int
-            _door = default;
+            _door = default,
+            _pid = default;
 
         private bool
             _enabled = false;
@@ -27,6 +28,8 @@ namespace BLL.Models
         public string UpdateAt { get => _updateAt; set => _updateAt = value; }
 
         public int Door { get => _door; set => _door = value; }
+
+        public int Pid { get => _pid; set => _pid = value; }
 
         public bool Enabled { get => _enabled; set => _enabled = value; }
 
