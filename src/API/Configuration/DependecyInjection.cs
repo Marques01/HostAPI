@@ -11,6 +11,7 @@ namespace API.Configuration
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ICategoryProductRepository, CategoryProductRepository>();
             services.AddScoped<IHostRepository, HostRepository>();
+            services.AddScoped<IGameRepository, GameRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }

@@ -8,19 +8,11 @@
             {
                 string _path = $@"c:\Logs\{DateTime.Now.ToString("yyyy-MM-dd")}_{model}.log";
 
-                if (!File.Exists(_path))
+                using (StreamWriter streamWriter = new(_path, true))
                 {
-                    using (StreamWriter sw = File.CreateText(_path))
-                    {
-                        await sw.WriteLineAsync(errorMessage);
-                    }
-                }
-                else
-                {
-                    using (StreamWriter streamWriter = new(_path, true))
-                    {
-                        streamWriter.WriteLine(errorMessage);
-                    }
+                    await streamWriter.WriteLineAsync($"{DateTime.Now} {errorMessage}");
+
+                    await streamWriter.FlushAsync();
                 }
             }
             catch (Exception ex)

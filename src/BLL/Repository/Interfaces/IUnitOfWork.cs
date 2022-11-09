@@ -10,6 +10,8 @@
 
         public IHostRepository HostRepository { get; }
 
+        public IGameRepository GameRepository { get; }
+
         Task CommitAsync();
 
         Task DisposeAsync();

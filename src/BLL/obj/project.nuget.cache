@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9TbbQmithm/oGgV/VAU8wSnKcDLWLoy3Jwg9WuD0lkwtRdkesI253F+O6WYIGpjNtmdeuWmuyzlfKJuVb6dhPA==",
+  "dgSpecHash": "dY4iD3PIVpuKvBKzZcbMX1SW9KlHWp107jKQ0igYJ4SRixLt6VG67hb40XCQxc3plJFuz6vxAziVF6SYB+zL1A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cleit\\OneDrive\\Área de Trabalho\\hostapi\\src\\BLL\\BLL.csproj",
+  "projectFilePath": "C:\\Users\\cleit\\Desktop\\HostAPI\\src\\BLL\\BLL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cleit\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.9\\microsoft.aspnetcore.cryptography.internal.6.0.9.nupkg.sha512",
     "C:\\Users\\cleit\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.9\\microsoft.aspnetcore.cryptography.keyderivation.6.0.9.nupkg.sha512",
