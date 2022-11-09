@@ -4,9 +4,15 @@ namespace BLL.Repository.Interfaces
 {
     public interface ICapacityRepository
     {
+        Task CreateAsync(Capacity capacity);
+
+        Task UpdateAsync(Capacity capacity);
+
+        Task DeleteAsync(Capacity capacity);
+
         Task<IEnumerable<Capacity>> GetAllCapacitiesAsync();
 
-        Task<Capacity> GetBySlotsAsync(int slots);
+        Task<IEnumerable<Capacity>> GetBySlotsAsync(int slots);
 
         Task<Capacity> GetBydIdAsync(Guid id);
     }

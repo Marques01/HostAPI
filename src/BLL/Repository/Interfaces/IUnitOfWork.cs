@@ -12,6 +12,8 @@
 
         public IGameRepository GameRepository { get; }
 
+        public ICapacityRepository CapacityRepository { get; }
+
         Task CommitAsync();
 
         Task DisposeAsync();
