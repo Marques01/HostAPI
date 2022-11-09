@@ -55,7 +55,7 @@ namespace DAL.Repository
         {
             try
             {
-                var games = await _context.Games.AsNoTracking().ToListAsync();
+                var games = await _context.Games.AsNoTracking().OrderBy(x => x.Name).ToListAsync();
 
                 if (games != null)
                     return games;

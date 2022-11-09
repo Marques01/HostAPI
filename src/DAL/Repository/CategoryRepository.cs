@@ -81,7 +81,7 @@ namespace DAL.Repository
         {
             try
             {
-                var categories = await _context.Categories.AsNoTracking().ToListAsync();
+                var categories = await _context.Categories.AsNoTracking().OrderBy(x => x.Name).ToListAsync();
 
                 if (categories != null)
                     return categories;

@@ -69,7 +69,7 @@ namespace DAL.Repository
         {
             try
             {
-                var hosts = await _context.Hosts.AsNoTracking().ToListAsync();
+                var hosts = await _context.Hosts.AsNoTracking().OrderBy(x => x.Name).ToListAsync();
 
                 if (hosts != null)
                     return hosts;
