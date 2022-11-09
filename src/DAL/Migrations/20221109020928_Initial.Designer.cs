@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221108020919_initial")]
-    partial class initial
+    [Migration("20221109020928_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -195,6 +195,10 @@ namespace DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("CreateAt")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10)");
+
                     b.Property<int>("Door")
                         .HasColumnType("int");
 
@@ -204,6 +208,10 @@ namespace DAL.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(125)");
+
+                    b.Property<string>("UpdateAt")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10)");
 
                     b.HasKey("HostId");
 
@@ -229,42 +237,6 @@ namespace DAL.Migrations
                     b.HasIndex("HostId");
 
                     b.ToTable("HostCapacity", (string)null);
-                });
-
-            modelBuilder.Entity("BLL.Models.HostLoggin", b =>
-                {
-                    b.Property<Guid>("HostId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CreateAt")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<int>("Door")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Enabled")
-                        .HasColumnType("bit");
-
-                    b.Property<Guid>("HostLogginId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(125)");
-
-                    b.Property<string>("RemoveAt")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UpdateAt")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(20)");
-
-                    b.HasKey("HostId");
-
-                    b.ToTable("HostLoggin", (string)null);
                 });
 
             modelBuilder.Entity("BLL.Models.Product", b =>

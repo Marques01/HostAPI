@@ -556,11 +556,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cleit\\Desktop\\HostAPI\\src\\BLL\\BLL.csproj",
+      "projectUniqueName": "C:\\Users\\cleit\\OneDrive\\Área de Trabalho\\hostapi\\src\\BLL\\BLL.csproj",
       "projectName": "BLL",
-      "projectPath": "C:\\Users\\cleit\\Desktop\\HostAPI\\src\\BLL\\BLL.csproj",
+      "projectPath": "C:\\Users\\cleit\\OneDrive\\Área de Trabalho\\hostapi\\src\\BLL\\BLL.csproj",
       "packagesPath": "C:\\Users\\cleit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cleit\\Desktop\\HostAPI\\src\\BLL\\obj\\",
+      "outputPath": "C:\\Users\\cleit\\OneDrive\\Área de Trabalho\\hostapi\\src\\BLL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

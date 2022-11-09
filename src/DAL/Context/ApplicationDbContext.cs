@@ -21,8 +21,6 @@ namespace DAL.Context
 
         public DbSet<Capacity> Capacities { get; set; }
 
-        public DbSet<HostLoggin> HostLoggins { get; set; }
-
         public DbSet<HostCapacity> HostCapacities { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -41,8 +39,6 @@ namespace DAL.Context
             Games = Set<Game>();
 
             Capacities = Set<Capacity>();
-
-            HostLoggins = Set<HostLoggin>();
 
             HostCapacities = Set<HostCapacity>();
         }

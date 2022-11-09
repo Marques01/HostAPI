@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DAL.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -95,30 +95,14 @@ namespace DAL.Migrations
                 {
                     HostId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(125)", nullable: false),
+                    CreateAt = table.Column<string>(type: "nvarchar(10)", nullable: false),
+                    UpdateAt = table.Column<string>(type: "nvarchar(10)", nullable: false),
                     Door = table.Column<int>(type: "int", nullable: false),
                     Enabled = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Host", x => x.HostId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "HostLoggin",
-                columns: table => new
-                {
-                    HostId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    HostLogginId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(125)", nullable: false),
-                    Door = table.Column<int>(type: "int", nullable: false),
-                    Enabled = table.Column<bool>(type: "bit", nullable: false),
-                    CreateAt = table.Column<string>(type: "nvarchar(20)", nullable: false),
-                    UpdateAt = table.Column<string>(type: "nvarchar(20)", nullable: false),
-                    RemoveAt = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_HostLoggin", x => x.HostId);
                 });
 
             migrationBuilder.CreateTable(
@@ -434,9 +418,6 @@ namespace DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "HostCapacity");
-
-            migrationBuilder.DropTable(
-                name: "HostLoggin");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

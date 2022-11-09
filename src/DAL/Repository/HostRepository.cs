@@ -30,19 +30,7 @@ namespace DAL.Repository
                 string errorMessage = $"Não foi possível cadastrar o host {ex.Message}";
 
                 await Log.Create(errorMessage, this.GetType().ToString());                
-            }
-            finally
-            {
-                HostLoggin hostLoggin = new()
-                {
-                    HostId = host.HostId,
-                    Door = host.Door,
-                    Enabled = host.Enabled,
-                    Name = host.Name,
-                };
-
-                await _context.HostLoggins.AddAsync(hostLoggin);
-            }
+            }            
         }
 
         public async Task DeleteHostAsync(Host host)
@@ -53,20 +41,11 @@ namespace DAL.Repository
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Não foi possível excluir o host{ex.Message}");
-            }
-            finally
-            {
-                HostLoggin hostLoggin = new()
-                {
-                    HostId = host.HostId,
-                    Door = host.Door,
-                    Enabled = host.Enabled,
-                    Name = host.Name,
-                    RemoveAt = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
-                };
+                string errorMessage = $"Não foi possível excluir o host {ex.Message}";
 
-                await _context.HostLoggins.AddAsync(hostLoggin);
+                Console.WriteLine(errorMessage);
+
+                await Log.Create(errorMessage, this.GetType().ToString());
             }
         }
 
@@ -78,20 +57,11 @@ namespace DAL.Repository
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Não foi possível desabilitar o host\n{ex.Message}");
-            }
-            finally
-            {
-                HostLoggin hostLoggin = new()
-                {
-                    HostId = host.HostId,
-                    Door = host.Door,
-                    Enabled = host.Enabled,
-                    Name = host.Name,
-                    RemoveAt = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
-                };
+                string errorMessage = $"Não foi possível desabilitar o host {ex.Message}";
 
-                await _context.HostLoggins.AddAsync(hostLoggin);
+                Console.WriteLine(errorMessage);
+
+                await Log.Create(errorMessage, this.GetType().ToString());
             }
         }
 
@@ -213,19 +183,6 @@ namespace DAL.Repository
                 await Log.Create(errorMessage, this.GetType().ToString());
 
                 throw new Exception(errorMessage);
-            }
-            finally
-            {
-                HostLoggin hostLoggin = new()
-                {
-                    HostId = host.HostId,
-                    Door = host.Door,
-                    Enabled = host.Enabled,
-                    Name = host.Name,
-                    UpdateAt = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
-                };
-
-                await _context.HostLoggins.AddAsync(hostLoggin);
             }
         }
     }
