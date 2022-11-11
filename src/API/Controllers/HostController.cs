@@ -1,11 +1,12 @@
-﻿using BLL.Models;
-using BLL.Repository.Interfaces;
+﻿using BLL.Repository.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(Policy = "Admin")]
     public class HostController : Controller
     {
         private IUnitOfWork _uof;
@@ -52,7 +53,7 @@ namespace API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetHost(Guid id)
+        public async Task<ActionResult> GetHost(int id)
         {
             var host = await _uof.HostRepository.GetByIdAsync(id);
 
@@ -60,7 +61,7 @@ namespace API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> Update(Guid id, [FromBody] BLL.Models.Host host)
+        public async Task<ActionResult> Update(int id, [FromBody] BLL.Models.Host host)
         {
             var _host = await _uof.HostRepository.GetByIdAsync(id);
 

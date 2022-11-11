@@ -59,7 +59,7 @@ namespace DAL.Repository
             }
         }
 
-        public Product GetById(Guid id)
+        public Product GetById(int id)
         {
             try
             {
@@ -131,7 +131,7 @@ namespace DAL.Repository
             }
         }
 
-        public async Task<IEnumerable<CategoryProduct>> GetByCategory(Guid id)
+        public async Task<IEnumerable<CategoryProduct>> GetByCategory(int id)
         {
             try
             {

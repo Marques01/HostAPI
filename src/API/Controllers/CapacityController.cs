@@ -1,11 +1,13 @@
 ﻿using BLL.Models;
 using BLL.Repository.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(Policy = "Admin")]
     public class CapacityController : Controller
     {
         private IUnitOfWork _uof;
@@ -16,7 +18,7 @@ namespace API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetById(Guid id)
+        public async Task<ActionResult> GetById(int id)
         {
             var capacity = await _uof.CapacityRepository.GetBydIdAsync(id);
 

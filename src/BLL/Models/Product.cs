@@ -4,7 +4,7 @@ namespace BLL.Models
 {
     public class Product
     {
-        private Guid
+        private int
             _productId = default;            
 
         private string
@@ -14,7 +14,7 @@ namespace BLL.Models
         private decimal
             _price = default;
 
-        public Guid ProductId { get => _productId; init => _productId = value; }        
+        public int ProductId { get => _productId; init => _productId = value; }        
 
         public string Name { get => _name; init => _name = value; }
 
@@ -28,8 +28,6 @@ namespace BLL.Models
 
         public Product()
         {
-            _productId = Guid.NewGuid();
-
             Categories = new Collection<Category>();
 
             CategoriesProducts = new Collection<CategoryProduct>();

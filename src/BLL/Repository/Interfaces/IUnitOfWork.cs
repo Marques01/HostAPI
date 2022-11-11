@@ -14,7 +14,9 @@
 
         public ICapacityRepository CapacityRepository { get; }
 
-        public IGameCapacityRepository GameCapacityRepository { get; set; }
+        public IGameCapacityRepository GameCapacityRepository { get; }
+
+        public IHostCapacityRepository HostCapacityRepository { get; }
 
         Task CommitAsync();
 

@@ -72,7 +72,7 @@ namespace DAL.Repository
             }
         }
 
-        public async Task<Capacity> GetBydIdAsync(Guid id)
+        public async Task<Capacity> GetBydIdAsync(int id)
         {
             try
             {

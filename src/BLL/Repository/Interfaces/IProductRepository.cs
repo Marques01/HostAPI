@@ -10,7 +10,7 @@ namespace BLL.Repository.Interfaces
 
         void Delete(Product model);
 
-        Product GetById(Guid id);
+        Product GetById(int id);
 
         Task<IEnumerable<Product>> GetByName(string name);
 
@@ -18,6 +18,6 @@ namespace BLL.Repository.Interfaces
 
         Task<IEnumerable<Product>> GetByPricing(decimal price);
 
-        Task<IEnumerable<CategoryProduct>> GetByCategory(Guid id);        
+        Task<IEnumerable<CategoryProduct>> GetByCategory(int id);        
     }
 }

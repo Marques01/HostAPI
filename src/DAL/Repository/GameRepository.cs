@@ -72,7 +72,7 @@ namespace DAL.Repository
             }
         }
 
-        public async Task<Game> GetByIdAsync(Guid id)
+        public async Task<Game> GetByIdAsync(int id)
         {
             try
             {

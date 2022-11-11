@@ -3,6 +3,7 @@ using BLL.Models;
 using DAL.Context;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,12 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Lockout.MaxFailedAccessAttempts = 20;
 });
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Admin", policy => policy.RequireClaim("Admin"));
+    options.AddPolicy("User", policy => policy.RequireClaim("User"));
+});
+
 builder.Services.Configure<DataProtectionTokenProviderOptions>(options =>
 {
     options.TokenLifespan = TimeSpan.FromHours(1);
@@ -35,7 +42,8 @@ builder.Services.Configure<DataProtectionTokenProviderOptions>(options =>
 
 DependecyInjection.RegisterDependencyInjection(builder.Services);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

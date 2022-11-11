@@ -2,13 +2,13 @@
 {
     public class CategoryProduct
     {
-        private Guid
+        private int
             _categoryId = default,
             _productId = default;
 
-        public Guid CategoryId { get => _categoryId; set => _categoryId = value; }
+        public int CategoryId { get => _categoryId; set => _categoryId = value; }
 
-        public Guid ProductId { get => _productId; set => _productId = value; }
+        public int ProductId { get => _productId; set => _productId = value; }
 
         public Product Product { get; set; }
 

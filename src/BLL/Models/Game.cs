@@ -4,13 +4,13 @@ namespace BLL.Models
 {
     public class Game
     {
-        private Guid
+        private int
             _gameId = default;
 
         private string
             _name = string.Empty;
 
-        public Guid GameId { get => _gameId; set => _gameId = value; }
+        public int GameId { get => _gameId; set => _gameId = value; }
 
         public string Name { get => _name; set => _name = value; }
 

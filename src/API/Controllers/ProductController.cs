@@ -1,11 +1,13 @@
 ﻿using BLL.Models;
 using BLL.Repository.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(Policy = "Admin")]
     public class ProductController : Controller
     {
         private IUnitOfWork _uof;
@@ -52,7 +54,7 @@ namespace API.Controllers
 
         [HttpGet]
         [Route("category")]
-        public async Task<ActionResult<IEnumerable<Product>>> GetByCategory(Guid id)
+        public async Task<ActionResult<IEnumerable<Product>>> GetByCategory(int id)
         {
             var products = await _uof.ProductRepository.GetByCategory(id);
 

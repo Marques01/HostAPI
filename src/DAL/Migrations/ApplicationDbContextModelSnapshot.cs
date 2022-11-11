@@ -109,9 +109,11 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("BLL.Models.Capacity", b =>
                 {
-                    b.Property<Guid>("CapacityId")
+                    b.Property<int>("CapacityId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CapacityId"), 1L, 1);
 
                     b.Property<int>("Slots")
                         .HasColumnType("int");
@@ -123,9 +125,11 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("BLL.Models.Category", b =>
                 {
-                    b.Property<Guid>("CategoryId")
+                    b.Property<int>("CategoryId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryId"), 1L, 1);
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -138,11 +142,11 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("BLL.Models.CategoryProduct", b =>
                 {
-                    b.Property<Guid>("CategoryId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
 
                     b.HasKey("CategoryId", "ProductId");
 
@@ -153,9 +157,11 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("BLL.Models.Game", b =>
                 {
-                    b.Property<Guid>("GameId")
+                    b.Property<int>("GameId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GameId"), 1L, 1);
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -168,15 +174,17 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("BLL.Models.GameCapacity", b =>
                 {
-                    b.Property<Guid>("GameCapacityId")
+                    b.Property<int>("GameCapacityId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("CapacityId")
-                        .HasColumnType("uniqueidentifier");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GameCapacityId"), 1L, 1);
 
-                    b.Property<Guid>("GameId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("CapacityId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GameId")
+                        .HasColumnType("int");
 
                     b.HasKey("GameCapacityId");
 
@@ -189,9 +197,11 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("BLL.Models.Host", b =>
                 {
-                    b.Property<Guid>("HostId")
+                    b.Property<int>("HostId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HostId"), 1L, 1);
 
                     b.Property<string>("CreateAt")
                         .IsRequired()
@@ -221,15 +231,17 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("BLL.Models.HostCapacity", b =>
                 {
-                    b.Property<Guid>("HostCapacityId")
+                    b.Property<int>("HostCapacityId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("GameCapacityId")
-                        .HasColumnType("uniqueidentifier");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HostCapacityId"), 1L, 1);
 
-                    b.Property<Guid>("HostId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("GameCapacityId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HostId")
+                        .HasColumnType("int");
 
                     b.HasKey("HostCapacityId");
 
@@ -242,9 +254,11 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("BLL.Models.Product", b =>
                 {
-                    b.Property<Guid>("ProductId")
+                    b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProductId"), 1L, 1);
 
                     b.Property<string>("ImagePath")
                         .IsRequired()
@@ -265,11 +279,11 @@ namespace DAL.Migrations
 
             modelBuilder.Entity("CategoryProduct", b =>
                 {
-                    b.Property<Guid>("CategoriesCategoryId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("CategoriesCategoryId")
+                        .HasColumnType("int");
 
-                    b.Property<Guid>("ProductsProductId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("ProductsProductId")
+                        .HasColumnType("int");
 
                     b.HasKey("CategoriesCategoryId", "ProductsProductId");
 

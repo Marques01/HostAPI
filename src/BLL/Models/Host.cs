@@ -4,7 +4,7 @@ namespace BLL.Models
 {
     public class Host
     {
-        private Guid
+        private int
             _hostId = default;
 
         private string
@@ -19,7 +19,7 @@ namespace BLL.Models
         private bool
             _enabled = false;
 
-        public Guid HostId { get => _hostId; set => _hostId = value; }
+        public int HostId { get => _hostId; set => _hostId = value; }
 
         public string Name { get => _name; set => _name = value; }
 
@@ -37,8 +37,6 @@ namespace BLL.Models
 
         public Host()
         {
-            _hostId = Guid.NewGuid();
-
             _createAt = DateTime.Now.ToString("yyyy/MM/dd");
 
             HostCapacities = new Collection<HostCapacity>();

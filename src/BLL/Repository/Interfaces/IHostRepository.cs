@@ -4,7 +4,7 @@ namespace BLL.Repository.Interfaces
 {
     public interface IHostRepository
     {
-        Task<Host> GetByIdAsync(Guid id);
+        Task<Host> GetByIdAsync(int id);
 
         Task<Host> GetByNameAsync(string name);
 

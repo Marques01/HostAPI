@@ -4,13 +4,13 @@ namespace BLL.Models
 {
     public class Category
     {
-        private Guid
+        private int
             _categoryId = default;
 
         private string
             _name = string.Empty;
 
-        public Guid CategoryId { get => _categoryId; init => _categoryId = value; }
+        public int CategoryId { get => _categoryId; init => _categoryId = value; }
 
         public string Name { get => _name; init => _name = value; }
 
@@ -20,8 +20,6 @@ namespace BLL.Models
 
         public Category()
         {
-            _categoryId = Guid.NewGuid();
-
             Products = new Collection<Product>();
 
             CategoriesProducts = new Collection<CategoryProduct>();

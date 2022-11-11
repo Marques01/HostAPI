@@ -107,7 +107,7 @@ namespace DAL.Repository
             }
         }
 
-        public async Task<Host> GetByIdAsync(Guid id)
+        public async Task<Host> GetByIdAsync(int id)
         {
             try
             {

@@ -1,12 +1,14 @@
 ﻿using BLL.Models;
 using BLL.Repository.Interfaces;
 using BLL.Validations;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(Policy = "Admin")]
     public class CategoryController : Controller
     {
         private IUnitOfWork _uof;
@@ -28,7 +30,7 @@ namespace API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetByIdCategory(Guid id)
+        public async Task<ActionResult> GetByIdCategory(int id)
         {
             var categories = await _uof.CategoryRepository.GetById(id);            
 
@@ -61,7 +63,7 @@ namespace API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> Update(Guid id, [FromBody] Category category)
+        public async Task<ActionResult> Update(int id, [FromBody] Category category)
         {
             CategoryValidations categoryValidations = new();
 
@@ -75,7 +77,7 @@ namespace API.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(Guid id, [FromBody] Category category)
+        public async Task<ActionResult> Delete(int id, [FromBody] Category category)
         {
             _uof.CategoryRepository.Update(category);
 

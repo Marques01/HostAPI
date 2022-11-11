@@ -13,7 +13,8 @@ namespace API.Configuration
             services.AddScoped<IHostRepository, HostRepository>();
             services.AddScoped<IGameRepository, GameRepository>();
             services.AddScoped<ICapacityRepository, CapacityRepository>();
-            services.AddScoped<IGameCapacityRepository, GameCapacityRepository>();            
+            services.AddScoped<IGameCapacityRepository, GameCapacityRepository>();
+            services.AddScoped<IHostCapacityRepository, HostCapacityRepository>(); 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }

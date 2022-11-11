@@ -2,6 +2,8 @@
 using DAL.Context;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace API.Controllers
 {
@@ -12,23 +14,27 @@ namespace API.Controllers
         private UserManager<ApplicationUser> _userManager;
 
         private SignInManager<ApplicationUser> _signInManager;
-        
-        public AccountController(SignInManager<ApplicationUser> _signInManager, UserManager<ApplicationUser> _userManager)
-        {   
+
+        private ApplicationDbContext _context;
+
+        public AccountController(SignInManager<ApplicationUser> _signInManager, UserManager<ApplicationUser> _userManager, ApplicationDbContext context)
+        {
             this._signInManager = _signInManager;
 
-            this._userManager = _userManager;            
+            this._userManager = _userManager;
+
+            _context = context;
         }
 
-        [HttpPost]        
+        [HttpPost]
         public async Task<ActionResult> Register(UserDto model)
         {
             var user = new ApplicationUser
             {
                 UserName = model.Email,
                 Email = model.Email,
-                EmailConfirmed = true,                
-            };            
+                EmailConfirmed = true,
+            };
 
             var result = await _userManager.CreateAsync(user, model.Password);
 
@@ -37,11 +43,17 @@ namespace API.Controllers
                 return BadRequest(model);
             }
 
+            string perfil = "Admin";
+
+            Claim claim = new Claim(perfil, perfil, ClaimValueTypes.String);
+
+            IdentityResult resultClaim = await _userManager.AddClaimAsync(user, claim);
+
             await _signInManager.SignInAsync(user, false);
 
             return Ok(model);
-        }        
-        
+        }
+
         [HttpPost]
         [Route("login")]
         public async Task<ActionResult> Login(UserDto userInfo)
@@ -54,11 +66,20 @@ namespace API.Controllers
             try
             {
                 var result = await _signInManager.PasswordSignInAsync(userInfo.Email,
-                userInfo.Password, isPersistent: false, lockoutOnFailure: false);
 
+                    userInfo.Password, isPersistent: false, lockoutOnFailure: false);
 
                 if (result.Succeeded)
-                    return Ok(userInfo);
+                {
+                    var user = await _context.Users.FirstOrDefaultAsync(x => x.Email.Equals(userInfo.Email));
+
+                    var claims = Enumerable.Empty<Claim>();
+
+                    if (user != null)
+                        claims = await _userManager.GetClaimsAsync(user);
+
+                    return Ok(claims);
+                }
 
             }
             catch (Exception ex)

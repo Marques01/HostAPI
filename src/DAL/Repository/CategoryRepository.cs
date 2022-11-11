@@ -38,7 +38,7 @@ namespace DAL.Repository
             }
         }
 
-        public async Task<Category> GetById(Guid id)
+        public async Task<Category> GetById(int id)
         {
             try
             {

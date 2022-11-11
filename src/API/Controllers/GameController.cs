@@ -1,11 +1,13 @@
 ﻿using BLL.Models;
 using BLL.Repository.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(Policy = "Admin")]
     public class GameController : Controller
     {
         private IUnitOfWork _uof;
@@ -16,7 +18,7 @@ namespace API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetById(Guid id)
+        public async Task<ActionResult> GetById(int id)
         {
             var game = await _uof.GameRepository.GetByIdAsync(id);
 
@@ -52,7 +54,7 @@ namespace API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> Update(Guid id, [FromBody] Game game)
+        public async Task<ActionResult> Update(int id, [FromBody] Game game)
         {
             var _game = await _uof.GameRepository.GetByNameAsync(game.Name);
 

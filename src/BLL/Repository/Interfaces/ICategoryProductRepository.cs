@@ -4,6 +4,6 @@ namespace BLL.Repository.Interfaces
 {
     public interface ICategoryProductRepository
     {
-        Task<IEnumerable<CategoryProduct>> GetProductsByCategory(Guid categoryId);
+        Task<IEnumerable<CategoryProduct>> GetProductsByCategory(int categoryId);
     }
 }

@@ -71,7 +71,7 @@ namespace DAL.Repository
             }
         }
 
-        public async Task<IEnumerable<GameCapacity>> GetByCapacityAsync(Guid id)
+        public async Task<IEnumerable<GameCapacity>> GetByCapacityAsync(int id)
         {
             try
             {
@@ -92,7 +92,7 @@ namespace DAL.Repository
             }
         }
 
-        public async Task<IEnumerable<GameCapacity>> GetByGameIdAsync(Guid id)
+        public async Task<IEnumerable<GameCapacity>> GetByGameIdAsync(int id)
         {
             try
             {
@@ -113,7 +113,7 @@ namespace DAL.Repository
             }
         }
 
-        public async Task<GameCapacity> GetByIdAsync(Guid id)
+        public async Task<GameCapacity> GetByIdAsync(int id)
         {
             try
             {

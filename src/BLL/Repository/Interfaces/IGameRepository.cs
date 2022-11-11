@@ -12,7 +12,7 @@ namespace BLL.Repository.Interfaces
 
         Task<IEnumerable<Game>> GetAllGamesAsync();
 
-        Task<Game> GetByIdAsync(Guid id);
+        Task<Game> GetByIdAsync(int id);
 
         Task<Game> GetByNameAsync(string name);
     }

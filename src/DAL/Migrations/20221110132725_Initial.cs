@@ -57,7 +57,8 @@ namespace DAL.Migrations
                 name: "Capacity",
                 columns: table => new
                 {
-                    CapacityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CapacityId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Slots = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -69,7 +70,8 @@ namespace DAL.Migrations
                 name: "Category",
                 columns: table => new
                 {
-                    CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(100)", nullable: false)
                 },
                 constraints: table =>
@@ -81,7 +83,8 @@ namespace DAL.Migrations
                 name: "Games",
                 columns: table => new
                 {
-                    GameId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    GameId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
@@ -93,11 +96,13 @@ namespace DAL.Migrations
                 name: "Host",
                 columns: table => new
                 {
-                    HostId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    HostId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(125)", nullable: false),
                     CreateAt = table.Column<string>(type: "nvarchar(10)", nullable: false),
                     UpdateAt = table.Column<string>(type: "nvarchar(10)", nullable: false),
                     Door = table.Column<int>(type: "int", nullable: false),
+                    Pid = table.Column<int>(type: "int", nullable: false),
                     Enabled = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -109,7 +114,8 @@ namespace DAL.Migrations
                 name: "Products",
                 columns: table => new
                 {
-                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     ImagePath = table.Column<string>(type: "nvarchar(125)", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(8,2)", precision: 8, scale: 2, nullable: false)
@@ -229,9 +235,10 @@ namespace DAL.Migrations
                 name: "GameCapacity",
                 columns: table => new
                 {
-                    GameCapacityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    GameId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CapacityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    GameCapacityId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    GameId = table.Column<int>(type: "int", nullable: false),
+                    CapacityId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -254,8 +261,8 @@ namespace DAL.Migrations
                 name: "CategoriesProducts",
                 columns: table => new
                 {
-                    CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    ProductId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -278,8 +285,8 @@ namespace DAL.Migrations
                 name: "CategoryProduct",
                 columns: table => new
                 {
-                    CategoriesCategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    ProductsProductId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    CategoriesCategoryId = table.Column<int>(type: "int", nullable: false),
+                    ProductsProductId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -302,9 +309,10 @@ namespace DAL.Migrations
                 name: "HostCapacity",
                 columns: table => new
                 {
-                    HostCapacityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    HostId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    GameCapacityId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    HostCapacityId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    HostId = table.Column<int>(type: "int", nullable: false),
+                    GameCapacityId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

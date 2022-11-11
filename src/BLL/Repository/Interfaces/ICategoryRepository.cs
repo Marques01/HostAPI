@@ -14,6 +14,6 @@ namespace BLL.Repository.Interfaces
 
         Task<IEnumerable<Category>> GetByName(string name);
 
-        Task<Category> GetById(Guid id);        
+        Task<Category> GetById(int id);        
     }
 }

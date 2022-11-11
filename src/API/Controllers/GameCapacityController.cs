@@ -1,11 +1,13 @@
 ﻿using BLL.Models;
 using BLL.Repository.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(Policy = "Admin")]
     public class GameCapacityController : Controller
     {
         private IUnitOfWork _uof;
@@ -16,7 +18,7 @@ namespace API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetById(Guid id)
+        public async Task<ActionResult> GetById(int id)
         {
             var gameCapacity = await _uof.GameCapacityRepository.GetByIdAsync(id);
 
@@ -25,7 +27,7 @@ namespace API.Controllers
 
         [HttpGet]
         [Route("game")]
-        public async Task<ActionResult> Game([FromQuery] Guid id)
+        public async Task<ActionResult> Game([FromQuery] int id)
         {
             var games = await _uof.GameCapacityRepository.GetByGameIdAsync(id);
 
@@ -34,7 +36,7 @@ namespace API.Controllers
 
         [HttpGet]
         [Route("slot")]
-        public async Task<ActionResult> Capacity([FromQuery] Guid id)
+        public async Task<ActionResult> Capacity([FromQuery] int id)
         {
             var capacities = await _uof.GameCapacityRepository.GetByCapacityAsync(id);
 
@@ -61,7 +63,7 @@ namespace API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<ActionResult> Update(Guid id, [FromBody] GameCapacity gameCapacity)
+        public async Task<ActionResult> Update(int id, [FromBody] GameCapacity gameCapacity)
         {
             await _uof.GameCapacityRepository.UpdateAsync(gameCapacity);
 

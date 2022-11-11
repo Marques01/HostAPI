@@ -10,12 +10,12 @@ namespace BLL.Repository.Interfaces
 
         Task DeleteAsync(GameCapacity gameCapacity);
 
-        Task<GameCapacity> GetByIdAsync(Guid id);
+        Task<GameCapacity> GetByIdAsync(int id);
 
         Task<IEnumerable<GameCapacity>> GetAllGameCapacitiesAsync();
 
-        Task<IEnumerable<GameCapacity>> GetByGameIdAsync(Guid id);
+        Task<IEnumerable<GameCapacity>> GetByGameIdAsync(int id);
 
-        Task<IEnumerable<GameCapacity>> GetByCapacityAsync(Guid id);
+        Task<IEnumerable<GameCapacity>> GetByCapacityAsync(int id);
     }
 }

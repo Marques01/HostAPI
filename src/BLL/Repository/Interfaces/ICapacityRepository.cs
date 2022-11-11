@@ -14,6 +14,6 @@ namespace BLL.Repository.Interfaces
 
         Task<IEnumerable<Capacity>> GetBySlotsAsync(int slots);
 
-        Task<Capacity> GetBydIdAsync(Guid id);
+        Task<Capacity> GetBydIdAsync(int id);
     }
 }

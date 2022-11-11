@@ -14,7 +14,7 @@ namespace DAL.Repository
 			_context = context;		
 		}
 
-        public async Task<IEnumerable<CategoryProduct>> GetProductsByCategory(Guid categoryId)
+        public async Task<IEnumerable<CategoryProduct>> GetProductsByCategory(int categoryId)
         {
 			try
 			{
