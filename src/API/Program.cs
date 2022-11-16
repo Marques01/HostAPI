@@ -1,8 +1,10 @@
 using API.Configuration;
 using BLL.Models;
 using DAL.Context;
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,32 +14,18 @@ string connectionString = builder.Configuration.GetConnectionString("DefaultConn
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
+builder.Services.AddDefaultIdentity<ApplicationUser>()
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
-builder.Services.Configure<IdentityOptions>(options =>
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(x =>
+x.TokenValidationParameters = new TokenValidationParameters
 {
-    options.Password.RequiredLength = 5;
-    options.Password.RequiredUniqueChars = 1;
-    options.Password.RequireDigit = false;
-    options.Password.RequireLowercase = false;
-    options.Password.RequireNonAlphanumeric = false;
-    options.Password.RequireUppercase = false;
-
-    options.SignIn.RequireConfirmedEmail = true;
-    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(20);
-    options.Lockout.MaxFailedAccessAttempts = 20;
-});
-
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("Admin", policy => policy.RequireClaim("Admin"));
-    options.AddPolicy("User", policy => policy.RequireClaim("User"));
-});
-
-builder.Services.Configure<DataProtectionTokenProviderOptions>(options =>
-{
-    options.TokenLifespan = TimeSpan.FromHours(1);
+    ValidateIssuer = false,
+    ValidateAudience = false,
+    ValidateLifetime = true,
+    ValidateIssuerSigningKey = true,
+    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["jwt:key"])),
+    ClockSkew = TimeSpan.Zero
 });
 
 DependecyInjection.RegisterDependencyInjection(builder.Services);
@@ -64,8 +52,12 @@ x.AllowAnyMethod()
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
+app.UseRouting();
 app.UseAuthorization();
-
-app.MapControllers();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 //
 app.Run();

@@ -244,3 +244,4 @@ C:\Users\cleit\OneDrive\Fotos e documentos\Documentos\Repo\HostAPI\src\API\obj\D
 C:\Users\cleit\OneDrive\Fotos e documentos\Documentos\Repo\HostAPI\src\API\obj\Debug\net6.0\API.pdb
 C:\Users\cleit\OneDrive\Fotos e documentos\Documentos\Repo\HostAPI\src\API\obj\Debug\net6.0\API.genruntimeconfig.cache
 C:\Users\cleit\OneDrive\Fotos e documentos\Documentos\Repo\HostAPI\src\API\obj\Debug\net6.0\ref\API.dll
+C:\Users\cleit\Desktop\HostAPI\src\API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

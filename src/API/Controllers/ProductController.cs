@@ -7,7 +7,8 @@ namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize(Policy = "Admin")]
+    [Authorize(Roles = "Admin")]
+
     public class ProductController : Controller
     {
         private IUnitOfWork _uof;

@@ -3,7 +3,10 @@ using DAL.Context;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
 
 namespace API.Controllers
 {
@@ -17,16 +20,21 @@ namespace API.Controllers
 
         private ApplicationDbContext _context;
 
-        public AccountController(SignInManager<ApplicationUser> _signInManager, UserManager<ApplicationUser> _userManager, ApplicationDbContext context)
+        private IConfiguration _config;
+
+        public AccountController(SignInManager<ApplicationUser> _signInManager, UserManager<ApplicationUser> _userManager, ApplicationDbContext context, IConfiguration config)
         {
             this._signInManager = _signInManager;
 
             this._userManager = _userManager;
 
             _context = context;
+
+            _config = config;
         }
 
         [HttpPost]
+        [Route("register")]
         public async Task<ActionResult> Register(UserDto model)
         {
             var user = new ApplicationUser
@@ -36,33 +44,19 @@ namespace API.Controllers
                 EmailConfirmed = true,
             };
 
-            var result = await _userManager.CreateAsync(user, model.Password);
-
-            if (!result.Succeeded)
-            {
-                return BadRequest(model);
-            }
-
-            string perfil = "Admin";
-
-            Claim claim = new Claim(perfil, perfil, ClaimValueTypes.String);
-
-            IdentityResult resultClaim = await _userManager.AddClaimAsync(user, claim);
+            var result = await _userManager.CreateAsync(user, model.Password);            
 
             await _signInManager.SignInAsync(user, false);
 
-            return Ok(model);
+            var token = await GenerateTokenAsync(model);
+
+            return Ok(token);
         }
 
         [HttpPost]
         [Route("login")]
-        public async Task<ActionResult> Login(UserDto userInfo)
+        public async Task<ActionResult> Login([FromBody] UserDto userInfo)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(userInfo);
-            }
-
             try
             {
                 var result = await _signInManager.PasswordSignInAsync(userInfo.Email,
@@ -71,14 +65,9 @@ namespace API.Controllers
 
                 if (result.Succeeded)
                 {
-                    var user = await _context.Users.FirstOrDefaultAsync(x => x.Email.Equals(userInfo.Email));
+                    var token = await GenerateTokenAsync(userInfo);
 
-                    var claims = Enumerable.Empty<Claim>();
-
-                    if (user != null)
-                        claims = await _userManager.GetClaimsAsync(user);
-
-                    return Ok(claims);
+                    return Ok(token);
                 }
 
             }
@@ -90,6 +79,55 @@ namespace API.Controllers
             ModelState.AddModelError(String.Empty, "Login inválido");
 
             return Ok();
+        }
+
+        private async Task<UserToken> GenerateTokenAsync(UserDto userInfo)
+        {
+            try
+            {
+                var user = await _signInManager.UserManager.FindByEmailAsync(userInfo.Email);
+
+                var userRoles = await _context.UserRoles.AsNoTracking().Where(x => x.UserId.Equals(user.Id)).ToListAsync();
+
+                var authClaims = new List<Claim>();
+
+                foreach (var roles in userRoles)
+                {
+                    var role = await _context.Roles.AsNoTracking().FirstOrDefaultAsync(x => x.Id.Equals(roles.RoleId));
+
+                    if (role != null)
+                        authClaims.Add(new Claim(ClaimTypes.Role, role.Name));
+                }
+
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JWT:key"]));
+
+                var creds =
+                   new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+                var expiration = DateTime.UtcNow.AddHours(2);
+
+                var message = "Token JWT criado com sucesso";
+
+                JwtSecurityToken token = new JwtSecurityToken(
+                issuer: null,
+                audience: null,
+                claims: authClaims,
+                expires: expiration,
+                signingCredentials: creds);
+
+                return new UserToken()
+                {
+                    Token = new JwtSecurityTokenHandler().WriteToken(token),
+                    Expiration = expiration,
+                    Message = message
+                };
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return new UserToken();
         }
     }
 }

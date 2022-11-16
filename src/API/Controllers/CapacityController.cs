@@ -7,7 +7,7 @@ namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize(Policy = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class CapacityController : Controller
     {
         private IUnitOfWork _uof;
