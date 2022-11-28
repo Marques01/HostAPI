@@ -18,6 +18,8 @@
 
         public IHostCapacityRepository HostCapacityRepository { get; }
 
+        public IRoleIdentityRepository RoleIdentityRepository { get; }
+
         Task CommitAsync();
 
         Task DisposeAsync();

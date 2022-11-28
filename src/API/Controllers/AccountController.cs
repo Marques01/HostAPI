@@ -1,8 +1,7 @@
 ﻿using BLL.Models;
-using DAL.Context;
+using BLL.Repository.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -18,19 +17,30 @@ namespace API.Controllers
 
         private SignInManager<ApplicationUser> _signInManager;
 
-        private ApplicationDbContext _context;
-
         private IConfiguration _config;
 
-        public AccountController(SignInManager<ApplicationUser> _signInManager, UserManager<ApplicationUser> _userManager, ApplicationDbContext context, IConfiguration config)
+        private IUnitOfWork _uof;
+
+        public AccountController(SignInManager<ApplicationUser> _signInManager, UserManager<ApplicationUser> _userManager, IUnitOfWork uof, IConfiguration config)
         {
             this._signInManager = _signInManager;
 
             this._userManager = _userManager;
 
-            _context = context;
+            _uof = uof;
 
             _config = config;
+        }
+
+        [HttpPost]
+        [Route("role")]
+        public async Task<ActionResult> Role([FromBody] ApplicationRole applicationRole)
+        {
+            await _uof.RoleIdentityRepository.CreateAsync(applicationRole);
+
+            await _uof.CommitAsync();
+
+            return Ok();
         }
 
         [HttpPost]
@@ -47,6 +57,18 @@ namespace API.Controllers
             var result = await _userManager.CreateAsync(user, model.Password);            
 
             await _signInManager.SignInAsync(user, false);
+
+            ApplicationRole role = new()
+            {
+                Name = "Admin",
+                NormalizedName = "ADMIN"
+            };
+
+            await _uof.RoleIdentityRepository.CreateAsync(role);
+
+            await _uof.CommitAsync();
+
+            await _userManager.AddToRoleAsync(user, "Admin");            
 
             var token = await GenerateTokenAsync(model);
 
@@ -87,13 +109,13 @@ namespace API.Controllers
             {
                 var user = await _signInManager.UserManager.FindByEmailAsync(userInfo.Email);
 
-                var userRoles = await _context.UserRoles.AsNoTracking().Where(x => x.UserId.Equals(user.Id)).ToListAsync();
+                var userRoles = await _uof.RoleIdentityRepository.GetAllUserRolesAsync(user.Id);                
 
                 var authClaims = new List<Claim>();
 
                 foreach (var roles in userRoles)
                 {
-                    var role = await _context.Roles.AsNoTracking().FirstOrDefaultAsync(x => x.Id.Equals(roles.RoleId));
+                    var role = await _uof.RoleIdentityRepository.GetRoleByIdAsync(roles.RoleId);
 
                     if (role != null)
                         authClaims.Add(new Claim(ClaimTypes.Role, role.Name));

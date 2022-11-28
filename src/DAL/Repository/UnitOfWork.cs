@@ -26,6 +26,8 @@ namespace DAL.Repository
             GameCapacityRepository= new GameCapacityRepository(_context);
 
             HostCapacityRepository = new HostCapacityRepository(_context);
+
+            RoleIdentityRepository = new RoleIdentityRepository(_context);
         }
 
         public ICategoryRepository CategoryRepository { get; }
@@ -35,6 +37,8 @@ namespace DAL.Repository
         public ICategoryProductRepository CategoryProductRepository { get; }
 
         public IHostRepository HostRepository { get; }
+
+        public IRoleIdentityRepository RoleIdentityRepository { get; }
 
         public IGameRepository GameRepository { get; }
 

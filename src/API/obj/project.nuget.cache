@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iVtahyWdBgrlh2oyjaGf4WpeTuPJpxSdabtn6i63y1uB7L6K3sSO58Sqp665RvyTbNZJ+pRYRedgXzrQVdM2Lw==",
+  "dgSpecHash": "RPlLexvzIdzPkWSRZn/41YXHYhuNpfyQHOH/IJh+f31GNNoVPFNWUsIY3y+gD/CtBROULxjKmLDyqYGMIjMRzQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cleit\\Desktop\\HostAPI\\src\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\cleit\\OneDrive\\Área de Trabalho\\HostAPI\\src\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cleit\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\cleit\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
