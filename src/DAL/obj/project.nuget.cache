@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "E+X+ACXyciC0PFTKFCHFicM58jaFdjfbuo6RJmf7+xQhIJaCMiOeDrpZrlDbMkb6fpz/IRl2x5cjW6tcBcsWpQ==",
+  "dgSpecHash": "2ft+zw6oJAxlMXan0brlWjeG/BvFsjPjZQP+fg6KTXR1sLhgDmCylxrFLM00NagCNpRVnFhFtRWwo5SvpaxBkQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cleit\\OneDrive\\Área de Trabalho\\HostAPI\\src\\DAL\\DAL.csproj",
+  "projectFilePath": "C:\\Users\\cleit\\Desktop\\HostAPI\\src\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cleit\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\cleit\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.9\\microsoft.aspnetcore.cryptography.internal.6.0.9.nupkg.sha512",

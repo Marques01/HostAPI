@@ -110,7 +110,9 @@ namespace API.Controllers
 
                 var userRoles = await _uof.RoleIdentityRepository.GetAllUserRolesAsync(user.Id);                
 
-                var authClaims = new List<Claim>();
+                var authClaims = new List<Claim>();                
+
+                authClaims.Add(new Claim(ClaimTypes.Email, user.Email));
 
                 foreach (var roles in userRoles)
                 {

@@ -8017,11 +8017,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cleit\\OneDrive\\Área de Trabalho\\HostAPI\\src\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\cleit\\Desktop\\HostAPI\\src\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\cleit\\OneDrive\\Área de Trabalho\\HostAPI\\src\\API\\API.csproj",
+      "projectPath": "C:\\Users\\cleit\\Desktop\\HostAPI\\src\\API\\API.csproj",
       "packagesPath": "C:\\Users\\cleit\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cleit\\OneDrive\\Área de Trabalho\\HostAPI\\src\\API\\obj\\",
+      "outputPath": "C:\\Users\\cleit\\Desktop\\HostAPI\\src\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -8043,11 +8043,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\cleit\\OneDrive\\Área de Trabalho\\HostAPI\\src\\BLL\\BLL.csproj": {
-              "projectPath": "C:\\Users\\cleit\\OneDrive\\Área de Trabalho\\HostAPI\\src\\BLL\\BLL.csproj"
+            "C:\\Users\\cleit\\Desktop\\HostAPI\\src\\BLL\\BLL.csproj": {
+              "projectPath": "C:\\Users\\cleit\\Desktop\\HostAPI\\src\\BLL\\BLL.csproj"
             },
-            "C:\\Users\\cleit\\OneDrive\\Área de Trabalho\\HostAPI\\src\\DAL\\DAL.csproj": {
-              "projectPath": "C:\\Users\\cleit\\OneDrive\\Área de Trabalho\\HostAPI\\src\\DAL\\DAL.csproj"
+            "C:\\Users\\cleit\\Desktop\\HostAPI\\src\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\cleit\\Desktop\\HostAPI\\src\\DAL\\DAL.csproj"
             }
           }
         }
