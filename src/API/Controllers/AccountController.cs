@@ -33,6 +33,17 @@ namespace API.Controllers
         }
 
         [HttpPost]
+        [Route("roleuser")]
+        public async Task<ActionResult> AssociateUserRole([FromBody] IdentityUserRole<Guid> identityUserRole)
+        {
+            await _uof.RoleIdentityRepository.AssociateUserRole(identityUserRole);
+
+            await _uof.CommitAsync();
+
+            return Ok();
+        }
+
+        [HttpPost]
         [Route("role")]
         public async Task<ActionResult> Role([FromBody] ApplicationRole applicationRole)
         {
@@ -56,19 +67,7 @@ namespace API.Controllers
 
             var result = await _userManager.CreateAsync(user, model.Password);            
 
-            await _signInManager.SignInAsync(user, false);
-
-            ApplicationRole role = new()
-            {
-                Name = "Admin",
-                NormalizedName = "ADMIN"
-            };
-
-            await _uof.RoleIdentityRepository.CreateAsync(role);
-
-            await _uof.CommitAsync();
-
-            await _userManager.AddToRoleAsync(user, "Admin");            
+            await _signInManager.SignInAsync(user, false);                                       
 
             var token = await GenerateTokenAsync(model);
 

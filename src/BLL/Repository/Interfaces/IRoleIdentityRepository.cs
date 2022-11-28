@@ -14,5 +14,7 @@ namespace BLL.Repository.Interfaces
         Task<IEnumerable<IdentityUserRole<Guid>>> GetAllUserRolesAsync(Guid id);
 
         Task<ApplicationRole> GetRoleByIdAsync(Guid id);
+
+        Task AssociateUserRole(IdentityUserRole<Guid> identityUserRole);
     }
 }

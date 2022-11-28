@@ -323,3 +323,4 @@ C:\Users\cleiton.marques\Desktop\HostAPI\src\API\obj\Debug\net6.0\refint\API.dll
 C:\Users\cleiton.marques\Desktop\HostAPI\src\API\obj\Debug\net6.0\API.pdb
 C:\Users\cleiton.marques\Desktop\HostAPI\src\API\obj\Debug\net6.0\API.genruntimeconfig.cache
 C:\Users\cleiton.marques\Desktop\HostAPI\src\API\obj\Debug\net6.0\ref\API.dll
+C:\Users\cleit\OneDrive\Área de Trabalho\HostAPI\src\API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

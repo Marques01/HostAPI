@@ -114,5 +114,29 @@ namespace DAL.Repository
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task AssociateUserRole(IdentityUserRole<Guid> identityUserRole)
+        {
+            try
+            {
+                var role = await GetRoleByIdAsync(identityUserRole.RoleId);
+
+                var user = await _context.Users.AsNoTracking().FirstOrDefaultAsync(x => x.Id.Equals(identityUserRole.UserId));                
+
+                if (string.IsNullOrEmpty(role.Name)) throw new Exception("Role não encontrada");
+
+                if (user is null) throw new Exception("Usuário não encontrado");                
+
+                await _context.UserRoles.AddAsync(identityUserRole);
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = $"Não foi possível associar a role ao usuário {ex.Message}";                
+
+                await Log.Create(errorMessage, this.GetType().ToString());
+
+                throw new Exception(errorMessage);
+            }
+        }
     }
 }
