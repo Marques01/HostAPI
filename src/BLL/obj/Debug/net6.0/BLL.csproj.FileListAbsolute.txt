@@ -94,3 +94,15 @@ C:\Users\cleiton.marques\Desktop\HostAPI\src\BLL\obj\Debug\net6.0\BLL.dll
 C:\Users\cleiton.marques\Desktop\HostAPI\src\BLL\obj\Debug\net6.0\refint\BLL.dll
 C:\Users\cleiton.marques\Desktop\HostAPI\src\BLL\obj\Debug\net6.0\BLL.pdb
 C:\Users\cleiton.marques\Desktop\HostAPI\src\BLL\obj\Debug\net6.0\ref\BLL.dll
+C:\Users\cleiton.marques\Desktop\Repositorios\HostAPI-main\src\BLL\bin\Debug\net6.0\BLL.deps.json
+C:\Users\cleiton.marques\Desktop\Repositorios\HostAPI-main\src\BLL\bin\Debug\net6.0\BLL.dll
+C:\Users\cleiton.marques\Desktop\Repositorios\HostAPI-main\src\BLL\bin\Debug\net6.0\BLL.pdb
+C:\Users\cleiton.marques\Desktop\Repositorios\HostAPI-main\src\BLL\obj\Debug\net6.0\BLL.csproj.AssemblyReference.cache
+C:\Users\cleiton.marques\Desktop\Repositorios\HostAPI-main\src\BLL\obj\Debug\net6.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cleiton.marques\Desktop\Repositorios\HostAPI-main\src\BLL\obj\Debug\net6.0\BLL.AssemblyInfoInputs.cache
+C:\Users\cleiton.marques\Desktop\Repositorios\HostAPI-main\src\BLL\obj\Debug\net6.0\BLL.AssemblyInfo.cs
+C:\Users\cleiton.marques\Desktop\Repositorios\HostAPI-main\src\BLL\obj\Debug\net6.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\cleiton.marques\Desktop\Repositorios\HostAPI-main\src\BLL\obj\Debug\net6.0\BLL.dll
+C:\Users\cleiton.marques\Desktop\Repositorios\HostAPI-main\src\BLL\obj\Debug\net6.0\refint\BLL.dll
+C:\Users\cleiton.marques\Desktop\Repositorios\HostAPI-main\src\BLL\obj\Debug\net6.0\BLL.pdb
+C:\Users\cleiton.marques\Desktop\Repositorios\HostAPI-main\src\BLL\obj\Debug\net6.0\ref\BLL.dll

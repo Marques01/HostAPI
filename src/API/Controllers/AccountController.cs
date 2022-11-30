@@ -32,6 +32,15 @@ namespace API.Controllers
             _config = config;
         }
 
+        [HttpGet]
+        [Route("users")]
+        public async Task<ActionResult> Users()
+        {
+            var users = await _uof.UserRepository.GetAllUsersAsync();
+
+            return Ok(users);
+        }
+
         [HttpPost]
         [Route("roleuser")]
         public async Task<ActionResult> AssociateUserRole([FromBody] IdentityUserRole<Guid> identityUserRole)

@@ -20,6 +20,8 @@
 
         public IRoleIdentityRepository RoleIdentityRepository { get; }
 
+        public IUserRepository UserRepository { get; }
+
         Task CommitAsync();
 
         Task DisposeAsync();
