@@ -1,4 +1,5 @@
-﻿using BLL.Models;
+﻿using API.Utils;
+using BLL.Models;
 using BLL.Repository.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +8,7 @@ namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
 
     public class ProductController : Controller
     {
@@ -93,6 +94,22 @@ namespace API.Controllers
             await _uof.CommitAsync();
 
             return Ok(product);
+        }
+
+        [HttpPost]
+        [Route("image")]
+        public async Task<ActionResult> UploadImage([FromForm] IFormFile files)
+        {
+            if (files is not null)
+            {
+                ImageUtils imageUtils = new();
+
+                imageUtils.GeneratePathImage(files);
+
+                await imageUtils.CopyImageToFolder(files);
+            }            
+
+            return Ok();
         }
     }
 }

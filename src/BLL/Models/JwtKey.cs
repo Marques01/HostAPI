@@ -1,0 +1,7 @@
+﻿namespace BLL.Models
+{
+    public class JwtKey
+    {
+        public static string Key { get { return "DB4BE99CDACD44D59A30806016C7A617#][456123]#5024DB2C8ECC431581DBB2A59B5367A7@)*B29ACC6034B945A0B2CE27148E4C56A4#q)#*)BF80FBBFC2694FDDB216F830894CACFE@(!@*#@"; } }
+    }
+}

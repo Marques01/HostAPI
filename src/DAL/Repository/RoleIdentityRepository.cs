@@ -52,7 +52,7 @@ namespace DAL.Repository
             }
         }        
 
-        public async Task<IEnumerable<ApplicationRole>> GetAllRolesUsersAsync()
+        public async Task<IEnumerable<ApplicationRole>> GetAllRolesAsync()
         {
             try
             {

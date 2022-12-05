@@ -1,5 +1,6 @@
 ﻿using BLL.Models;
 using BLL.Repository.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -32,6 +33,7 @@ namespace API.Controllers
             _config = config;
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         [Route("users")]
         public async Task<ActionResult> Users()
@@ -41,6 +43,17 @@ namespace API.Controllers
             return Ok(users);
         }
 
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
+        [Route("roles")]
+        public async Task<ActionResult> Roles()
+        {
+            var roles = await _uof.RoleIdentityRepository.GetAllRolesAsync();
+
+            return Ok(roles);
+        }
+
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [Route("roleuser")]
         public async Task<ActionResult> AssociateUserRole([FromBody] IdentityUserRole<Guid> identityUserRole)
@@ -52,6 +65,7 @@ namespace API.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [Route("role")]
         public async Task<ActionResult> Role([FromBody] ApplicationRole applicationRole)
@@ -74,9 +88,9 @@ namespace API.Controllers
                 EmailConfirmed = true,
             };
 
-            var result = await _userManager.CreateAsync(user, model.Password);            
+            var result = await _userManager.CreateAsync(user, model.Password);
 
-            await _signInManager.SignInAsync(user, false);                                       
+            await _signInManager.SignInAsync(user, false);
 
             var token = await GenerateTokenAsync(model);
 
@@ -115,13 +129,15 @@ namespace API.Controllers
         {
             try
             {
-                var user = await _signInManager.UserManager.FindByEmailAsync(userInfo.Email);
+                var user = await GetUserByEmail(userInfo.Email);
 
-                var userRoles = await _uof.RoleIdentityRepository.GetAllUserRolesAsync(user.Id);                
+                var userRoles = await _uof.RoleIdentityRepository.GetAllUserRolesAsync(user.Id);
 
-                var authClaims = new List<Claim>();                
+                var authClaims = new List<Claim>();
 
                 authClaims.Add(new Claim(ClaimTypes.Email, user.Email));
+
+                authClaims.Add(new Claim(ClaimTypes.Actor, $"{user.Name} {user.LastName}"));
 
                 foreach (var roles in userRoles)
                 {
@@ -129,9 +145,9 @@ namespace API.Controllers
 
                     if (role != null)
                         authClaims.Add(new Claim(ClaimTypes.Role, role.Name));
-                }
+                }                
 
-                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JWT:key"]));
+                var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtKey.Key));
 
                 var creds =
                    new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -160,6 +176,16 @@ namespace API.Controllers
             }
 
             return new UserToken();
+        }
+
+        private async Task<ApplicationUser> GetUserByEmail(string email)
+        {
+            var user = await _signInManager.UserManager.FindByEmailAsync(email);
+
+            if (user != null)
+                return user;
+
+            return new ApplicationUser();
         }
     }
 }

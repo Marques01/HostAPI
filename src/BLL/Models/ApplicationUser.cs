@@ -25,7 +25,7 @@ namespace BLL.Models
 
         public ApplicationUser()
         {
-            _createAt = DateTime.Now.ToString("dd/MM/aaaa HH:mm:ss");
+            _createAt = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
     }
 }

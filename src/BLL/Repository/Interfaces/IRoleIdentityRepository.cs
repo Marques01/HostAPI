@@ -9,7 +9,7 @@ namespace BLL.Repository.Interfaces
 
         Task DeleteAsync(ApplicationRole applicationRole);
 
-        Task<IEnumerable<ApplicationRole>> GetAllRolesUsersAsync();
+        Task<IEnumerable<ApplicationRole>> GetAllRolesAsync();
 
         Task<IEnumerable<IdentityUserRole<Guid>>> GetAllUserRolesAsync(Guid id);
 
