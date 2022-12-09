@@ -23,11 +23,8 @@ namespace API.Controllers
         {
             var categories = await _uof.CategoryRepository.GetCategories();
 
-            if (categories.Count() > 0)
-                return Ok(categories);
-
-            return Ok();
-        }
+			return Ok(categories);
+		}
 
         [HttpGet("{id}")]
         public async Task<ActionResult> GetByIdCategory(int id)
@@ -42,19 +39,12 @@ namespace API.Controllers
         {
             var categories = await _uof.CategoryRepository.GetByName(name);
 
-            if (categories.Count() > 0)
-                return Ok(categories);
-
-            return Ok();
+            return Ok(categories);
         }
 
         [HttpPost]
         public async Task<ActionResult> Create([FromBody] Category category)
         {
-            CategoryValidations categoryValidations = new();
-
-            categoryValidations.Validate(category);
-
             await _uof.CategoryRepository.Create(category);
 
             await _uof.CommitAsync();

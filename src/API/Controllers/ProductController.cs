@@ -8,7 +8,7 @@ namespace API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
 
     public class ProductController : Controller
     {
@@ -24,46 +24,34 @@ namespace API.Controllers
         {
             var products = await _uof.ProductRepository.GetProductsAsync();
 
-            if (products.Count() > 0)
-                return Ok(products);
-
-            return Ok();
-        }
+			return Ok(products);
+		}
 
         [HttpGet]
         [Route("name")]
         public async Task<ActionResult<IEnumerable<Product>>> GetByName([FromQuery] string name)
         {
-            var products = await _uof.ProductRepository.GetByName(name);
+            var products = await _uof.ProductRepository.GetByNameAsync(name);
 
-            if (products.Count() > 0)
-                return Ok(products);
-
-            return Ok();
-        }
+			return Ok(products);
+		}
 
         [HttpGet]
         [Route("price")]
         public async Task<ActionResult<IEnumerable<Product>>> GetByPricing(decimal price)
         {
-            var products = await _uof.ProductRepository.GetByPricing(price);
+            var products = await _uof.ProductRepository.GetByPricingAsync(price);
 
-            if (products.Count() > 0)
-                return Ok(products);
-
-            return Ok();
+            return Ok(products);
         }
 
         [HttpGet]
         [Route("category")]
         public async Task<ActionResult<IEnumerable<Product>>> GetByCategory(int id)
         {
-            var products = await _uof.ProductRepository.GetByCategory(id);
+            var products = await _uof.ProductRepository.GetByCategoryAsync(id);
 
-            if (products.Count() > 0)
-                return Ok(products);
-
-            return Ok();
+            return Ok(products);
         }
 
         [HttpPost]
@@ -86,9 +74,11 @@ namespace API.Controllers
             return Ok(product);
         }
 
-        [HttpDelete]
-        public async Task<ActionResult> Delete([FromBody] Product product)
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
         {
+            var product = await _uof.ProductRepository.GetByIdAsync(id);
+
             _uof.ProductRepository.Delete(product);
 
             await _uof.CommitAsync();
@@ -103,8 +93,6 @@ namespace API.Controllers
             if (files is not null)
             {
                 ImageUtils imageUtils = new();
-
-                imageUtils.GeneratePathImage(files);
 
                 await imageUtils.CopyImageToFolder(files);
             }            

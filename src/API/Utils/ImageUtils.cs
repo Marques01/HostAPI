@@ -2,14 +2,6 @@
 {
     public class ImageUtils
     {
-        public string GeneratePathImage(IFormFile file)
-        {
-            if (file != null)
-                return @$"C:\Users\cleit\Desktop\PetUI_Maui\src\UI\wwwroot\imagens\{file.FileName}";
-
-            return string.Empty;
-        }
-
         public async Task CopyImageToFolder(IFormFile file)
         {
             try

@@ -59,15 +59,14 @@ namespace DAL.Repository
             }
         }
 
-        public Product GetById(int id)
+        public async Task<Product> GetByIdAsync(int id)
         {
             try
             {
-                var product = _context.Products
-                    .AsNoTracking()
+                var product = await _context.Products                    
                     .Include(x => x.CategoriesProducts)
                     .Include(x => x.Categories)
-                    .FirstOrDefault(x => x.ProductId.Equals(id));
+                    .FirstOrDefaultAsync(x => x.ProductId.Equals(id));
 
                 if (product != null)
                     return product;
@@ -80,7 +79,7 @@ namespace DAL.Repository
             }
         }
 
-        public async Task<IEnumerable<Product>> GetByName(string name)
+        public async Task<IEnumerable<Product>> GetByNameAsync(string name)
         {
             try
             {
@@ -114,7 +113,7 @@ namespace DAL.Repository
             }
         }
 
-        public async Task<IEnumerable<Product>> GetByPricing(decimal price)
+        public async Task<IEnumerable<Product>> GetByPricingAsync(decimal price)
         {
             try
             {
@@ -131,7 +130,7 @@ namespace DAL.Repository
             }
         }
 
-        public async Task<IEnumerable<CategoryProduct>> GetByCategory(int id)
+        public async Task<IEnumerable<CategoryProduct>> GetByCategoryAsync(int id)
         {
             try
             {

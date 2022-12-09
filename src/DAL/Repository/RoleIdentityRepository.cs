@@ -56,7 +56,7 @@ namespace DAL.Repository
         {
             try
             {
-                var roles = await _context.Roles.AsNoTracking().ToListAsync();
+                var roles = await _context.Roles.AsNoTracking().OrderBy(x => x.Name).ToListAsync();
 
                 if (roles != null)
                     return roles;
